@@ -1,36 +1,37 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class P8_24FTT1804 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        //8.1 PrintingAlternatingAlphabet
-        String[] letters = new String[26];
-        for (int i = 0; i < 26; i++) {
-            letters[i] = String.valueOf((char) ('a' + i));
-        }
+        // //8.1 PrintingAlternatingAlphabet
+        // String[] letters = new String[26];
+        // for (int i = 0; i < 26; i++) {
+        //     letters[i] = String.valueOf((char) ('a' + i));
+        // }
 
-        for (int i = 0, j = 25; i < 26; i++, j--) {
-            System.out.print(letters[i]);
-            System.out.print(" ");
-            System.out.print(letters[j]);
-            if (i != 25) System.out.print(" ");
-        }
+        // for (int i = 0, j = 25; i < 26; i++, j--) {
+        //     System.out.print(letters[i]);
+        //     System.out.print(" ");
+        //     System.out.print(letters[j]);
+        //     if (i != 25) System.out.print(" ");
+        // }
 
         
-        // 8.2 ShiftingElementByInput
+        // // 8.2 ShiftingElementByInput
         
 
-        // System.out.println("How many numbers are there?\n");
+        // System.out.println("How many numbers?: ");
         // int n = input.nextInt();
 
         // int[] a = new int[n];
-        // System.out.println("Enter the " + n + " numbers:\n");
+        // System.out.println("Enter the " +n+ " numbers: ");
         // for (int i = 0; i < n; i++) {
         //     a[i] = input.nextInt();
         // }
 
-        // System.out.println("Enter number of left shift:\n");
+        // System.out.println("Enter number of left shift: ");
         // int k = input.nextInt();
         // if (n > 0) {
         //     k = k % n;
@@ -44,7 +45,7 @@ public class P8_24FTT1804 {
         //     a[n - 1] = first;
         // }
 
-        // System.out.println("\nThe shifted arrangement is:");
+        // System.out.println("The shifted arrangement is: ");
         // for (int i = 0; i < n; i++) {
         //     System.out.print(a[i]);
         //     if (i != n - 1) System.out.print(" ");
@@ -52,47 +53,47 @@ public class P8_24FTT1804 {
         
 
         
-        // //8.3 NumberGuessing
+        //8.3 NumberGuessing
         
-        // int[] nums = new int[10];
-        // for (int i = 0; i < 10; i++) nums[i] = i;
+        int[] nums = new int[10];
+        for (int i = 0; i < 10; i++) nums[i] = i;
 
-        // Random r = new Random();
-        // for (int i = 9; i > 0; i--) {
-        //     int j = r.nextInt(i + 1);
-        //     int tmp = nums[i];
-        //     nums[i] = nums[j];
-        //     nums[j] = tmp;
-        // }
+        Random r = new Random();
+        for (int i = 9; i > 0; i--) {
+            int j = r.nextInt(i + 1);
+            int tmp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tmp;
+        }
 
-        // int chances = 10;
-        // while (chances > 0) {
-        //     System.out.println("Guess 4 numbers (no duplicates):\n");
-        //     int g1 = input.nextInt();
-        //     int g2 = input.nextInt();
-        //     int g3 = input.nextInt();
-        //     int g4 = input.nextInt();
+        int chances = 10;
+        while (chances > 0) {
+            System.out.println("Guess 4 numbers (no duplicates):\n");
+            int g1 = input.nextInt();
+            int g2 = input.nextInt();
+            int g3 = input.nextInt();
+            int g4 = input.nextInt();
 
-        //     int score = 0;
-        //     if (g1 == nums[0]) score++;
-        //     if (g2 == nums[1]) score++;
-        //     if (g3 == nums[2]) score++;
-        //     if (g4 == nums[3]) score++;
+            int score = 0;
+            if (g1 == nums[0]) score++;
+            if (g2 == nums[1]) score++;
+            if (g3 == nums[2]) score++;
+            if (g4 == nums[3]) score++;
 
-        //     if (score == 4) {
-        //         System.out.println("You Won! You got the actual number!");
-        //         return;
+            if (score == 4) {
+                System.out.println("You Won! You got the actual number!");
+                return;
 
-        //     } else {
-        //         chances--;
+            } else {
+                chances--;
 
-        //         if (chances == 0) break;
-        //         System.out.println("You have scored " + score + " out of 4 numbers. You have " + chances + " chances left!");
-        //     }
-        // }
+                if (chances == 0) break;
+                System.out.println("You have scored " + score + " out of 4 numbers. You have " + chances + " chances left!");
+            }
+        }
 
-        // System.out.println();
-        // System.out.println("The actual number is " + nums[0] + " " + nums[1] + " " + nums[2] + " " + nums[3] + ". You Lose!");
+        System.out.println();
+        System.out.println("The actual number is " + nums[0] + " " + nums[1] + " " + nums[2] + " " + nums[3] + ". You Lose!");
         
 
         
